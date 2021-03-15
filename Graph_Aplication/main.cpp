@@ -1,12 +1,13 @@
 #include "Node.h"
 #include "Graph.h"
+#include "SFML-2.5.1/include/SFML/Graphics.hpp"
 
 #include <vector>
 #include <string>
 #include <fstream>
 #include <iostream>
 #include <limits.h> 
-#include <SFML/Graphics.hpp>
+//#include <SFML/Graphics.hpp>
 
 sf::VertexArray edge(float x1, float y1, float x2, float y2)
 {
