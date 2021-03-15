@@ -19,3 +19,4 @@ Supported functions:<br/>
 5. Алгоритм Дейкстры (пробел)
 
 ---
+###### SPBU, Applied Mathematics and Informatics, 3-rd semestr
