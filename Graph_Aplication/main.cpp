@@ -7,7 +7,6 @@
 #include <fstream>
 #include <iostream>
 #include <limits.h> 
-//#include <SFML/Graphics.hpp>
 
 sf::VertexArray edge(float x1, float y1, float x2, float y2)
 {
