@@ -32,7 +32,7 @@ void path(std::vector<int> c, std::vector<Node*> nodes_list, int i) {
 
 void dijkstra_algorithm(std::vector<Node*> nodes_list, std::string _begin_node, int n) {
 
-    int min, index, len, name;
+    int min, len, name;
     std::vector<int> a, b, c;
 
     int begin_node;
@@ -47,11 +47,12 @@ void dijkstra_algorithm(std::vector<Node*> nodes_list, std::string _begin_node, 
 
     a[begin_node] = 0;
 
-    for (int i = 0; i < n; ++i)
+    for (int i = 0; i < n - 1; ++i)
     {
+        int index, min = INT_MAX;;
+
         for (int j = 0; j < n; ++j)
         {
-            min = INT_MAX;
             if (!b[j] && a[j] < min)
             {
                 min = a[j];
@@ -65,7 +66,7 @@ void dijkstra_algorithm(std::vector<Node*> nodes_list, std::string _begin_node, 
         {
             len = std::stoi(neighbor.second);
             for (name = 0; neighbor.first != nodes_list[name]; ++name);
-            if (a[index] + len < a[name])
+            if (!b[name] && len && a[index] + len < a[name])
             {
                 c[name] = index;
                 a[name] = a[index] + len;
