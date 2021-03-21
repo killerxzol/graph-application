@@ -148,10 +148,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="edge.cpp" />
+    <ClCompile Include="graph.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="node.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Draw.h" />
+    <ClInclude Include="Edge.h" />
     <ClInclude Include="Graph.h" />
     <ClInclude Include="Node.h" />
   </ItemGroup>

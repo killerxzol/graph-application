@@ -1,34 +1,37 @@
 #ifndef NODE_H
 #define NODE_H
 
-#include <vector>
-#include <string>
+#include "Draw.h"
 
-class Node {
+class Edge;
+class Node: public Draw
+{
 public:
 
 	Node();
-	Node(float x, float y, std::string name);
+	Node(float x, float y, int name);
 	Node(Node* node);
 
 	float get_x();
 	float get_y();
-	std::string get_name();
-	std::string get_weight();
-	std::vector<std::pair<Node*, std::string>> get_neighbors();
+	float* get_x_();
+	float* get_y_();
+	int get_name();
+	std::vector<std::pair<Node*, Edge*>> get_neighbors();
 
 	void set_x(float X);
 	void set_y(float Y);
-	void set_name(std::string NAME);
-	void set_weight(std::string WEIGHT);
-	void add_neighbour(Node* node, std::string weight);
-	void delete_neighbour(Node* node);
+	void set_name(int NAME);
+	void add_neighbour(Node* node, Edge* edge);
+	void delete_neighbour(std::pair<Node*, Edge*> node);
+	std::vector<Edge*> delete_node();
+	void show(sf::RenderWindow& window);
+	
 
 private:
-
 	float x, y;
-	std::string name, weight;
-	std::vector<std::pair<Node*, std::string>> neighbours;
+	int name;
+	std::vector<std::pair<Node*, Edge*>> neighbours;
 
 };
 
